@@ -1,26 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
-    padding: 0;
-    margin: 0;
-    font-family: 'Poppins';
+:root{
+    /*Fonts*/
+    --font-primary: 'Poppins', sans-serif;
+    --font-secundary: "Krona One", sans-serif;
+    --font-tertiary: "Montserrat", sans-serif;
+
+    /*Colors*/
+    --value-red: red;
 }
 
-#background_article{
-    width: 100%;
-    position: fixed;
-    z-index: 0;
-}
-
-article{
-    background-image: url("../style/Intersect.png");
-    height: 80vh;
+#container_controller{
+    background-image: url("../img/Intersect.svg");
+    background-size:cover ;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#container_controller{
+#container_controller--items{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,16 +32,32 @@ article{
     color: white;
 }
 
-#container_controller a{
+#container_controller--items h1{
+    font-family: var(--font-secundary);
+    font-size: 3rem;
+    text-decoration: underline;
+}
+
+#container_controller--items p{
+    font-family: var(--font-tertiary);
+    font-size: 1.5rem;
+    font-weight: 300 ;
+}
+
+#container_controller--items a{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
     color: black;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     text-decoration: none;
     height: 70px;
-    font-weight: bold;
     width: 341px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: var(--font-tertiary);
 }
 
 #container_content{
@@ -49,7 +68,77 @@ article{
     flex-direction: column;
 }
 
+#container_content h2{
+    font-family: var(--font-primary);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
 #container_content img{
     width: 30px;
     margin-top: 20px;
+    position: relative;
+    animation: moveUpDown 1s infinite alternate;
+}
+
+#container_card{
+    margin-top: 4rem ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#container_card--item .card{
+    width: 18rem;
+}
+
+.card{
+    font-family: var(--font-tertiary);
+    font-weight: 600;
+    border: none;
+    transform: scale(1);
+    transition: all 1s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-body  .value-red{
+    text-decoration: line-through;
+    color: var(--value-red);
+    font-size: 1.5rem;
+}
+
+.card-body  .value-promotion{
+    font-size: 2.5rem;
+}
+
+.card-body .btn-primary{
+    background: #00FF19;
+    border: none;
+    font-weight: 600;
+    width: 80%;
+    padding: .8rem;
+}
+
+.card-text img{
+    width: 8%;
+    margin-right: .5em;
+}
+
+@keyframes moveUpDown {
+    0% {
+        top: 0px; 
+    }
+    100% {
+        top: 25px; 
+    }
 }
