@@ -137,6 +137,17 @@
     margin-right: .5em;
 }
 
+#prices_controll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#prices_controll p{
+    font-size: 30px;
+    margin: 30px 30px 0px 30px;
+}
+
 .border-radio{
     border: 1px solid transparent;
     border-radius: 50%;
